@@ -1,5 +1,6 @@
 <div class="container">
-  <h1><%= @trainer.name %></h1>
+  <%= link_to "< Trainers", trainers_path  %>
+  <h2><%= @trainer.name %></h2>
   <p>Âge: <%= @trainer.age %></p>
   <%= cl_image_tag @trainer.photo.key, alt: @trainer.name %>
 </div>

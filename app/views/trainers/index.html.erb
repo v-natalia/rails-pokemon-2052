@@ -1,8 +1,9 @@
 <div class="container">
+  <%= link_to "< Pokedex", root_path  %>
   <h1>Trainers</h1>
   <% @trainers.each do |trainer| %>
     <%= link_to trainer do  %>
-      <h2><%= trainer.name %></h2>
+      <h3><%= trainer.name %></h3>
       <%= cl_image_tag trainer.photo.key, alt: trainer.name %>
     <% end %>
   <% end %>
