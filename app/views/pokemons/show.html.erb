@@ -1,6 +1,18 @@
 <div class="container">
-  <%= link_to "< Pokedex", root_path  %>
-  <h2><%= @pokemon.name %></h2>
-  <p><%= @pokemon.element_type %></p>
-  <%= cl_image_tag @pokemon.photo.key, alt: @pokemon.name %>
+  <div class="d-flex justify-content-around">
+    <div class="mx-5">
+      <%= link_to "< Pokedex", root_path  %>
+      <h2><%= @pokemon.name %></h2>
+      <p><%= @pokemon.element_type %></p>
+      <%= cl_image_tag @pokemon.photo.key, alt: @pokemon.name %>
+    </div>
+    <div>
+      <%= simple_form_for [@pokemon, @pokeball] do |f| %>
+        <%= f.association :trainer %>
+        <%= f.input :location %>
+        <%= f.input :caught_on, as: :date, html5: true %>
+        <%= f.submit "Attrappe le pokemon", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
 </div>

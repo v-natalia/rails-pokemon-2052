@@ -5,3 +5,6 @@ class Trainer < ApplicationRecord
 
   # validations à faire si voulu
 end
+# on peut faire (dans la view)
+# trainer.pokeballs
+# trainer.pokemons

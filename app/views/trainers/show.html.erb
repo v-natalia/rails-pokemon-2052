@@ -1,6 +1,16 @@
 <div class="container">
-  <%= link_to "< Trainers", trainers_path  %>
-  <h2><%= @trainer.name %></h2>
-  <p>Âge: <%= @trainer.age %></p>
-  <%= cl_image_tag @trainer.photo.key, alt: @trainer.name %>
+  <div class="d-flex justify-content-around">
+    <div class="mx-5">
+      <%= link_to "< Trainers", trainers_path  %>
+      <h2><%= @trainer.name %></h2>
+      <p>Âge: <%= @trainer.age %></p>
+      <%= cl_image_tag @trainer.photo.key, alt: @trainer.name %>
+      </div>
+    <div class="">
+      <% @trainer.pokemons.each do |pokemon| %>
+        <h3><%= pokemon.name %></h3>
+        <%= cl_image_tag pokemon.photo.key, alt: pokemon.name %>
+      <% end %>
+    </div>
+  </div>
 </div>
