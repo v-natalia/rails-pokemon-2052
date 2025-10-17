@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Trainers</h1>
+  <% @trainers.each do |trainer| %>
+    <%= link_to trainer do  %>
+      <h2><%= trainer.name %></h2>
+      <%= cl_image_tag trainer.photo.key, alt: trainer.name %>
+    <% end %>
+  <% end %>
+</div>
